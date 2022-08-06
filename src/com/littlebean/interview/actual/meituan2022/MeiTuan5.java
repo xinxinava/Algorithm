@@ -1,5 +1,6 @@
 package com.littlebean.interview.actual.meituan2022;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class MeiTuan5 {
@@ -12,9 +13,11 @@ public class MeiTuan5 {
 
             while (s.length() < x){
                 s.append(s.reverse()).append("wow");
-            }
+             }
 
             System.out.println();
+
+
 
             System.out.println(Integer.MAX_VALUE);
         }
