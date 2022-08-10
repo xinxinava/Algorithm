@@ -1,4 +1,4 @@
-package com.littlebean;
+package com.littlebean.interview.practice;
 
 public class SimpleHashMap<K,V> {
     class Node<K,V>{
