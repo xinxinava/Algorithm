@@ -1,6 +1,6 @@
 package com.littlebean;
 
-import com.littlebean.util.Interval;
+
 
 import java.util.*;
 
@@ -17,5 +17,6 @@ public class Test {
     public void change(String str, char ch[]){
         str= "111";
         ch[0]= 'g';
+        List<Integer> list=new ArrayList<>();
     }
 }
