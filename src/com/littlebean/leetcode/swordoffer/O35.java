@@ -22,4 +22,25 @@ public class O35 {
         }
         return map.get(head);
     }
+
+    public Node copyRandomList1(Node head) {
+        if(head==null)
+            return null;
+        for(Node cur=head;cur!=null;cur=cur.next.next){
+            Node newNode=new Node(cur.val);
+            newNode.next=cur.next;
+            cur.next=newNode;
+        }
+        for(Node cur=head; cur!=null;cur=cur.next.next){
+            Node newNode=cur.next;
+            newNode.random=(cur.random==null?null:cur.random.next);
+        }
+        Node newHead=head.next;
+        for(Node cur=head; cur!=null; cur=cur.next){
+            Node newNode=cur.next;
+            cur.next=cur.next.next;
+            newNode.next=(cur.next==null?null:cur.next.next);
+        }
+        return newHead;
+    }
 }
