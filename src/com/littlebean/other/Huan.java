@@ -111,4 +111,25 @@ public class Huan {
         return list;
 
     }
+
+    public int maxProfit (int[] prices) {
+        // write code here
+        int n=prices.length;
+        int[][] dp=new int[5][n];
+        //dp[0]为没有操作手里的资金
+        //dp[1]为第一次买入
+        //dp[2]为第一次卖出后
+        //dp[3]为第二次买入后
+        //dp[4]为第二次卖出后
+        dp[1][0]=-prices[0];
+        dp[3][0]=-prices[0];
+        for(int i=1;i<n;i++){
+            dp[1][i]=Math.max(dp[1][i-1],-prices[i]);
+            dp[2][i]=Math.max(dp[2][i-1], dp[1][i-1]+prices[i]);
+            dp[3][i]=Math.max(dp[3][i-1],dp[2][i-1]-prices[i]);
+            dp[4][i]=Math.max(dp[4][i-1],dp[3][i-1]+prices[i]);
+        }
+        return dp[4][n-1];
+    }
+
 }
