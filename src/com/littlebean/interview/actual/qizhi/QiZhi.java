@@ -1,4 +1,4 @@
-package com.littlebean.interview.actual.qizhi.other;
+package com.littlebean.interview.actual.qizhi;
 
 import com.littlebean.util.ListNode;
 
